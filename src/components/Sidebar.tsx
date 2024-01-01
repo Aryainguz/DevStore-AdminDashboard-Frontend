@@ -71,7 +71,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
             <div className="flex items-center mt-8 justify-normal p-6">
               <div className="flex">
                 <span className="text-2xl font-semibold text-white">
-                  DevStore
+                  Admin.
                 </span>
               </div>
             </div>
@@ -119,18 +119,40 @@ const Sidebar: React.FC<Props> = ({ children }) => {
             </nav>
           </div>
 
-           
-           
+          <div className="flex flex-col flex-1 overflow-hidden">
+  <header className="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600">
+    <div className="flex items-center">
+     
+      <div className="relative mx-4 lg:mx-0">
+        <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg className="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+            </path>
+          </svg>
+        </span>
+        <input className="w-full m-auto h-10 border-2 pl-10 pr-4 rounded-md form-input sm:w-64 focus:border-violet-600" type="text" placeholder="Search" />
+      </div>
+    </div>
+  </header>
+
+
+
+
+       
            <RiMenu2Fill
                 className="fixed z-30 block w-6 h-6 text-gray-900 cursor-pointer lg:hidden mr-4 top-5 right-4"
                 onClick={toggleSidebar}
               />
 
+            
+           
+          
 
 
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
               {children}
             </main>
+          </div>
           </div>
     </>
   );
