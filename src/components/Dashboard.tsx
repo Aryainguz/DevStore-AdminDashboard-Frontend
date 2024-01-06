@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { IoMdPeople, IoMdReorder } from "react-icons/io";
 import { FaMoneyBill } from "react-icons/fa";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
@@ -6,6 +6,9 @@ import { BiMaleFemale } from "react-icons/bi";
 import Inventory from "./Inventory";
 import BarGraph  from "./BarGraph";
 import DoughnutChart from "./DougnutChart";
+import DashboardTable from "./DashboardTable";
+import { data } from './dummyTransaction' 
+
 
 interface statCardProps {
   title: string;
@@ -118,7 +121,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col mt-8 px-6 ml-4">
+      <div className="block sm:flex min-w-full p-6 overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
+
       <div className="w-[330px] p-4 text-center bg-white border border-gray-200 rounded-lg shadow">
                   <h5 className="leading-none text-xl text-gray-500 pb-4">
                     Gender Ratio
@@ -130,6 +134,9 @@ const Dashboard = () => {
             <div className="relative bottom-52 right-[-157px] text-2xl font-extralight">
               <BiMaleFemale /></div>
             
+            <div className="w-[330px] sm:w-[410px] lg:w-[500px] xl:w-full h-full">
+            <DashboardTable data={data} />
+            </div>
       </div>
     </>
   );
