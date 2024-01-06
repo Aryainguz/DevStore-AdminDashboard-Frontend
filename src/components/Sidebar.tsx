@@ -144,11 +144,6 @@ const Sidebar: React.FC<Props> = ({ children }) => {
                 onClick={toggleSidebar}
               />
 
-            
-           
-          
-
-
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
               {children}
             </main>
