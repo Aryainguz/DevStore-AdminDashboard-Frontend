@@ -6,6 +6,7 @@ import { lazy } from 'react'
 import { Suspense } from 'react'
 
 const Admin = lazy(() => import('./pages/Admin'))
+const Product  = lazy(() => import('./pages/Product'))
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/devstore/admin" element={<Admin/>} />
-        <Route path="/devstore/admin/products" element={<Admin/>} />
+        <Route path="/devstore/admin/products" element={<Product/>} />
         <Route path="/devstore/admin/customers" element={<Admin/>} />
       </Routes>
     </Router>
