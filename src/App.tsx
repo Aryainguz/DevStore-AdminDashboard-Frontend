@@ -13,7 +13,7 @@ const TransactionDetails = lazy(() => import('./pages/TransactionDetails'))
 const BarChart = lazy(() => import('./pages/BarChart'))
 const PieChart = lazy(() => import('./pages/PieChart'))
 const LineChart = lazy(() => import('./pages/LineChart'))
-
+const Coupan = lazy(() => import('./pages/Coupan'))
 function App() {
 
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="/devstore/admin/products" element={<Product/>} />
         <Route path="/devstore/admin/addproduct" element={<AddProduct/>} />
         <Route path="/devstore/admin/customers" element={<Customer/>} />
+        <Route path="/devstore/admin/coupans" element={<Coupan/>} />
         <Route path="/devstore/admin/product/:params" element={<ProductManage/>} />
         <Route path="/devstore/admin/transaction/:params" element={<TransactionDetails/>} />
         <Route path="/devstore/admin/transactions" element={<Transaction/>} />
