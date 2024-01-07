@@ -2,7 +2,7 @@ import React from "react";
 import { RiDashboardFill, RiShoppingBagFill } from "react-icons/ri";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoMdPeople } from "react-icons/io";
-import { FaChartBar, FaChartPie, FaChartLine } from "react-icons/fa";
+import { FaChartBar, FaChartPie, FaChartLine,FaMoneyBill } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -32,23 +32,28 @@ const DashboardArray: Array<dashboardArrayProps> = [
     icon: <IoMdPeople />,
     link: "/devstore/admin/customers",
   },
+  {
+    title: "Transactions",
+    icon: <FaMoneyBill />,
+    link: "/devstore/admin/transactions",
+  },
 ];
 
 const chartArray: Array<dashboardArrayProps> = [
   {
     title: "Bar",
     icon: <FaChartBar />,
-    link: "/admin/barchart",
+    link: "/devstore/admin/charts/bar",
   },
   {
     title: "Pie",
     icon: <FaChartPie />,
-    link: "/admin/piechart",
+    link: "/devstore/admin/charts/pie",
   },
   {
     title: "Line",
     icon: <FaChartLine />,
-    link: "/admin/linechart",
+    link: "/devstore/admin/charts/line",
   },
 ];
 
@@ -70,9 +75,11 @@ const Sidebar: React.FC<Props> = ({ children }) => {
           >
             <div className="flex items-center mt-8 justify-normal p-6">
               <div className="flex">
+                <Link to={'/devstore/admin'}>
                 <span className="text-2xl font-semibold text-white">
                   Admin.
                 </span>
+                </Link>
               </div>
             </div>
             <nav className="mt-10">
