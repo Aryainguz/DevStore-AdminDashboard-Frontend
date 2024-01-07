@@ -46,7 +46,7 @@ const Inventory = () => {
                                     {item.name}
                                 </p>
                                 <div className="bg-gray-300 w-[140px] rounded-lg h-2">
-                                <p className="text-sm mt-2 text-gray-500 rounded-lg h-2 bg-black truncate" style={{width:`${item.quantity}%`}}>
+                                <p className="text-sm mt-2 text-gray-500 rounded-lg h-2 bg-green-500 truncate" style={{width:`${item.quantity}%`}}>
                                    
                                    </p>
                                 </div>
