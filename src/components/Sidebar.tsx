@@ -1,7 +1,7 @@
 import React from "react";
 import { RiDashboardFill, RiShoppingBagFill } from "react-icons/ri";
 import { RiMenu2Fill } from "react-icons/ri";
-import { IoMdPeople } from "react-icons/io";
+import { IoMdBarcode, IoMdPeople } from "react-icons/io";
 import { FaChartBar, FaChartPie, FaChartLine,FaMoneyBill } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -36,6 +36,11 @@ const DashboardArray: Array<dashboardArrayProps> = [
     title: "Transactions",
     icon: <FaMoneyBill />,
     link: "/devstore/admin/transactions",
+  },
+  {
+    title: "Coupons",
+    icon: <IoMdBarcode />,
+    link: "/devstore/admin/coupans",
   },
 ];
 
