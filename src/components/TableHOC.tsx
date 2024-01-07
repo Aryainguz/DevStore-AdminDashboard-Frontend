@@ -1,4 +1,4 @@
-import { Column, useTable,useSortBy,usePagination} from "react-table";
+import { Column, useTable,useSortBy,usePagination, TableOptions} from "react-table";
 
 // here we are using generic type T which extends Object because we want to use any type of data in our table
 // generic type T are used when we don't know type of data being passed in our props
@@ -8,14 +8,16 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
 
   return function HOC(){
 
-    const Table = useTable({
+    const options:TableOptions<T> = {
       columns,
       data,
       initialState: { pageSize: 7 },  // you can set default page size here
-    },useSortBy,usePagination);
+    }
+
+    const Table = useTable(options,useSortBy,usePagination);
   
     // use page instead of rows for pagination to work by default max length of page is 10
-    const { getTableProps, headerGroups, page, prepareRow, getTableBodyProps,nextPage,previousPage,canNextPage,canPreviousPage,gotoPage,state:{pageIndex},pageCount } =Table;
+    const { headerGroups, page, prepareRow, getTableBodyProps,nextPage,previousPage,canNextPage,canPreviousPage,gotoPage,state:{pageIndex},pageCount } =Table;
      
     return (
       <>
@@ -26,7 +28,7 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
               <div className="flex flex-wrap items-center">
                 <div className="relative w-full px-4 max-w-full flex-grow flex-1">
                 <button
-                     className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canPreviousPage ? 'bg-indigo-500' : 'bg-gray-300 '}`} 
+                     className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canPreviousPage ? 'bg-blue-500' : 'bg-gray-300 '}`} 
                     type="button"
                     disabled={pageIndex <= 0}
                     onClick={()=>gotoPage(0)}
@@ -34,7 +36,7 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
                     FirstPage
                   </button>
                     <button
-                    className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canPreviousPage ? 'bg-indigo-500' : 'bg-gray-300 '}`} 
+                    className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canPreviousPage ? 'bg-blue-500' : 'bg-gray-300 '}`} 
                     type="button"                   
                     disabled={!canPreviousPage} 
                     onClick={previousPage}
@@ -44,14 +46,14 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
                 </div>
                 <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-center">
                 <span className="
-                  text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-white bg-indigo-500 last:mr-0 mr-1">
+                  text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-white bg-blue-500 last:mr-0 mr-1">
 
                   {pageIndex + 1} of {pageCount}
                 </span>
                 </div>
                 <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                   <button
-                    className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canNextPage ? 'bg-indigo-500' : 'bg-gray-300 '}`} 
+                    className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canNextPage ? 'bg-blue-500' : 'bg-gray-300 '}`} 
                     type="button"
                     disabled={!canNextPage}
                     onClick={nextPage}
@@ -59,7 +61,7 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
                     Next
                   </button>
                   <button
-                     className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canNextPage ? 'bg-indigo-500' : 'bg-gray-300 '}`} 
+                     className = {`text-white  text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${canNextPage ? 'bg-blue-500' : 'bg-gray-300 '}`} 
                     type="button"
                     disabled={pageIndex >= pageCount-1}
                     onClick={()=>gotoPage(pageCount-1)}
@@ -81,7 +83,7 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
                       {headerGroup.headers.map((header) => (
                         <th
                           {...header.getHeaderProps(header.getSortByToggleProps())}
-                          className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap text-left text-gray-500 font-medium"
                         >
                           {header.render("Header")} {header.isSorted ? ( header.isSortedDesc ? "⬇️" : "⬆️" ) : "➡️"}
                         </th>
@@ -101,7 +103,7 @@ const TableHOC = <T extends Object>(columns:Column<T>[],data:T[],heading:string)
                             <td
                           key={cell.getCellProps().key}
                               {...cell.getCellProps()}
-                              className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap py-3 text-left"
+                              className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
                             >
                               {cell.render("Cell")}
                             </td>
