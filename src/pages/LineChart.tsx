@@ -1,6 +1,5 @@
-import React from 'react'
-import Sidebar from '../components/Sidebar'
 import LineChartComponent from '../components/LineChartComponent';
+import Sidebar from '../components/Sidebar';
 
 const LineChart = () => {
   const months = [

@@ -1,17 +1,17 @@
-import { Pie } from "react-chartjs-2";
-import React from "react";
 import {
-  Chart as ChartJS,
   ArcElement,
   BarElement,
   CategoryScale,
   ChartData,
+  Chart as ChartJS,
   ChartOptions,
   Legend,
   LinearScale,
   Title,
   Tooltip,
 } from "chart.js";
+import React from "react";
+import { Pie } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
