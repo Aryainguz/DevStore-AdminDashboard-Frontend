@@ -1,13 +1,13 @@
-import React, { useMemo, useState } from "react";
-import { IoMdPeople, IoMdReorder } from "react-icons/io";
-import { FaMoneyBill } from "react-icons/fa";
-import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
+import React from "react";
 import { BiMaleFemale } from "react-icons/bi";
-import Inventory from "./Inventory";
-import BarGraph  from "./BarGraph";
-import DoughnutChart from "./DougnutChart";
+import { FaMoneyBill } from "react-icons/fa";
+import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
+import { IoMdPeople, IoMdReorder } from "react-icons/io";
+import BarGraph from "./BarGraph";
 import DashboardTable from "./DashboardTable";
-import { data } from './dummyTransaction' 
+import DoughnutChart from "./DougnutChart";
+import Inventory from "./Inventory";
+import { data } from './dummyTransaction';
 
 
 interface statCardProps {
