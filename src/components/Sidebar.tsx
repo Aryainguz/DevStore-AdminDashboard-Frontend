@@ -20,27 +20,27 @@ const DashboardArray: Array<dashboardArrayProps> = [
   {
     title: "Dashboard",
     icon: <RiDashboardFill />,
-    link: "/devstore/admin",
+    link: "",
   },
   {
     title: "Products",
     icon: <RiShoppingBagFill />,
-    link: "/devstore/admin/products",
+    link: "/products",
   },
   {
     title: "customers",
     icon: <IoMdPeople />,
-    link: "/devstore/admin/customers",
+    link: "/customers",
   },
   {
     title: "Transactions",
     icon: <FaMoneyBill />,
-    link: "/devstore/admin/transactions",
+    link: "/transactions",
   },
   {
     title: "Coupons",
     icon: <IoMdBarcode />,
-    link: "/devstore/admin/coupans",
+    link: "/coupans",
   },
 ];
 
@@ -48,17 +48,17 @@ const chartArray: Array<dashboardArrayProps> = [
   {
     title: "Bar",
     icon: <FaChartBar />,
-    link: "/devstore/admin/charts/bar",
+    link: "/charts/bar",
   },
   {
     title: "Pie",
     icon: <FaChartPie />,
-    link: "/devstore/admin/charts/pie",
+    link: "/charts/pie",
   },
   {
     title: "Line",
     icon: <FaChartLine />,
-    link: "/devstore/admin/charts/line",
+    link: "/charts/line",
   },
 ];
 
@@ -80,7 +80,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
           >
             <div className="flex items-center mt-8 justify-normal p-6">
               <div className="flex">
-                <Link to={'/devstore/admin'}>
+                <Link to={''}>
                 <span className="text-2xl font-semibold text-white">
                   Admin.
                 </span>

@@ -21,17 +21,17 @@ function App() {
     <Router>
       <Suspense fallback={<Loading/>}>
       <Routes>
-        <Route path="/devstore/admin" element={<Admin/>} />
-        <Route path="/devstore/admin/products" element={<Product/>} />
-        <Route path="/devstore/admin/addproduct" element={<AddProduct/>} />
-        <Route path="/devstore/admin/customers" element={<Customer/>} />
-        <Route path="/devstore/admin/coupans" element={<Coupan/>} />
-        <Route path="/devstore/admin/product/:params" element={<ProductManage/>} />
-        <Route path="/devstore/admin/transaction/:params" element={<TransactionDetails/>} />
-        <Route path="/devstore/admin/transactions" element={<Transaction/>} />
-        <Route path="/devstore/admin/charts/bar" element={<BarChart/>} />
-        <Route path="/devstore/admin/charts/pie" element={<PieChart/>} />
-        <Route path="/devstore/admin/charts/line" element={<LineChart/>} />
+        <Route path="/" element={<Admin/>} />
+        <Route path="/products" element={<Product/>} />
+        <Route path="/addproduct" element={<AddProduct/>} />
+        <Route path="/customers" element={<Customer/>} />
+        <Route path="/coupans" element={<Coupan/>} />
+        <Route path="/product/:params" element={<ProductManage/>} />
+        <Route path="/transaction/:params" element={<TransactionDetails/>} />
+        <Route path="/transactions" element={<Transaction/>} />
+        <Route path="/charts/bar" element={<BarChart/>} />
+        <Route path="/charts/pie" element={<PieChart/>} />
+        <Route path="/charts/line" element={<LineChart/>} />
 
       </Routes>
       </Suspense>
