@@ -46,7 +46,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-red-500">Processing</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -54,7 +54,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-purple-500">Shipped</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -62,7 +62,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-purple-500">Shipped</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -70,7 +70,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-purple-500">Shipped</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500  rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500  rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -78,7 +78,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-blue-500">Delivered</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -86,7 +86,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-blue-500">Delivered</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -94,7 +94,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-purple-500">Shipped</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
     {
         user:"john",
@@ -102,7 +102,7 @@ const dummyData: DataType[] = [
         discount: 10,
         quantity: 1,
         status: <span className="text-blue-500">Delivered</span>,
-        action: <Link to={'/devstore/admin/transaction/657564'} className="btn  text-blue-500 rounded-lg font-semibold">Manage</Link>,
+        action: <Link to={'/transaction/657564'} className="btn  text-blue-500 rounded-lg font-semibold">Manage</Link>,
     },
 ];
 
